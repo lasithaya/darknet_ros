@@ -119,11 +119,22 @@ Open diffrent launch files in the 'launch' folder and see how they have been con
 
 In order to get YOLO ROS: Real-Time Object Detection for ROS to run with your robot, you will need to adapt a few parameters. It is the easiest if duplicate and adapt all the parameter files that you need to change from the `darknet_ros` package. These are specifically the parameter files in `config` and the launch file from the `launch` folder.
 
+By default `darknet_ros` package  subscribe to the `camera/rgb/image_raw` topic for object detection. You can change this to your camera image topic in the launch file  to do realtime object detection. In this tutorial we will be using diffrent images from the `~/catkin_ws/src/danet_ros/images/` folder to test diffrent object detector modulers. We will be using the `my_image_publisher` packahe to publish a image as ros image in `/image` topic. Open two terminal and run `roscore`  in a one and run the image publisher mode as follows to publish an image.
+
+
 
 ```bash
-rosrun my_image_publisher image_publisher.py ~/catkin_ws/src/danet_ros/images/people.jpg
+rosrun my_image_publisher image_publisher.py ~/catkin_ws/src/darknet_ros/images/people.jpg
 
 ```
+# YOLO2-tiny Object Detector
+
+The default object detection classifier in this package is `YOLO2-tiny`. Its a mini version of YOLO2 network and design to run on CPU. You can run it by launching following base launch file. 
+
+```bash
+roslaunch darknet_ros darkent_ros,launch
+```
+I have alreday changed the image subscriber to `/image`. You will see a window with classification results
 ## Nodes
 
 ### Node: darknet_ros
