@@ -59,11 +59,11 @@ This software is built on the Robotic Operating System ([ROS]), which needs to b
 ### Building
 
 
-In order to install darknet_ros, clone this forked version of the original ROS package using SSH (see [how to set up an SSH key](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html)) from this repository into your catkin workspace and compile the package using ROS. It already has pre-trained Yolo network weights so you can use them straight away.  
+In order to install darknet_ros, clone this forked version of the original ROS package, (see [how to set up an SSH key](https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html) if you need to setup SSH keys) from this repository into your catkin workspace and compile the package using ROS. It already has pre-trained Yolo network weights so you can use them straight away.  
 
 ```bash
     cd catkin_workspace/src
-    git clone --recursive git@github.com:leggedrobotics/darknet_ros.git
+    git clone --recursive https://github.com/lasithaya/darknet_ros.git
     cd ../
 ```
 To maximize performance, make sure to build in *Release* mode. You can specify the build type by setting
@@ -143,7 +143,7 @@ Yolo3 is an improved version of Yolo2. You can launch it by following commad.
 roslaunch darknet_ros darkent_ros yolo_v3_tiny.launch
 ```
 ### Duckietown  Object Detector
-I have trained YOLO3 object detect to detects objects from Duckietown. Currently it can detect Duckiebots, Ducks and  Traffic signs. Publish the   `darknet_ros/darknet_ros/config/yolov3-tiny-duckie.yaml`
+I have trained YOLO3 object detect to detects objects from Duckietown. Currently it can detect Duckiebots, Ducks and  Traffic signs. Publish the 'duck.jpg' from the '/image' folder first. You can chnage the `treshold` parameter in    `darknet_ros/darknet_ros/config/yolov3-tiny-duckie.yaml` file if you are not detecting some objects. But lowering that would result in many false postives.
 
 ```bash
 roslaunch darknet_ros darkent_ros yolo_v3_tiny_duckie.launch
