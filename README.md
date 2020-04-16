@@ -132,7 +132,7 @@ rosrun my_image_publisher image_publisher.py ~/catkin_ws/src/darknet_ros/images/
 The default object detection classifier in this package is `YOLO2-tiny`. Its a mini version of YOLO2 network and design to run on CPU. You can run it by launching following base launch file. Full list of objects it can detect can be found in `/darknet_ros/config/yolov2-tiny.yaml'
 
 ```bash
-roslaunch darknet_ros darkent_ros.launch
+roslaunch darknet_ros darknet_ros.launch
 ```
 I have alreday changed the image subscriber to `/image`. You will see a window with classification results
 
