@@ -132,7 +132,7 @@ rosrun my_image_publisher image_publisher.py ~/catkin_ws/src/darknet_ros/images/
 The default object detection classifier in this package is `YOLO2-tiny`. Its a mini version of YOLO2 network and design to run on CPU. You can run it by launching following base launch file. Full list of objects it can detect can be found in `/darknet_ros/config/yolov2-tiny.yaml'
 
 ```bash
-roslaunch darknet_ros darkent_ros,launch
+roslaunch darknet_ros darkent_ros.launch
 ```
 I have alreday changed the image subscriber to `/image`. You will see a window with classification results
 
@@ -140,13 +140,13 @@ I have alreday changed the image subscriber to `/image`. You will see a window w
 Yolo3 is an improved version of Yolo2. You can launch it by following commad.
 
 ```bash
-roslaunch darknet_ros darkent_ros yolo_v3_tiny.launch
+roslaunch darknet_ros  yolo_v3_tiny.launch
 ```
 ### Duckietown  Object Detector
 I have trained YOLO3 object detect to detects objects from Duckietown. Currently it can detect Duckiebots, Ducks and  Traffic signs. Publish the 'duck.jpg' from the '/image' folder first. You can chnage the `treshold` parameter in    `darknet_ros/darknet_ros/config/yolov3-tiny-duckie.yaml` file if you are not detecting some objects. But lowering that would result in many false postives.
 
 ```bash
-roslaunch darknet_ros darkent_ros yolo_v3_tiny_duckie.launch
+roslaunch darknet_ros  yolo_v3_tiny_duckie.launch
 ```
 
 
